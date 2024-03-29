@@ -1,0 +1,29 @@
+<div class="userDetailsWrapper">
+  <div class="toolbarWrapper">
+    <mat-toolbar>
+      <button (click)="backToUsers()">Back</button>
+    </mat-toolbar>
+  </div>
+  <div class="userData" *ngIf="userData">
+    <div class="userImage">
+      <img [src]="userData.avatar" />
+    </div>
+    <div class="userInfo">
+      <p class="line">
+        <span class="key">First Name: </span>
+        <span class="value">{{ userData.first_name }}</span>
+      </p>
+      <p class="line">
+        <span class="key">Last Name: </span>
+        <span class="value">{{ userData.last_name }}</span>
+      </p>
+      <p class="line">
+        <span class="key">Email: </span>
+        <span class="value">{{ userData.email }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="emptyState" *ngIf="!userData">
+    <app-empty-state></app-empty-state>
+  </div>
+</div>

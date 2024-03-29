@@ -1,0 +1,43 @@
+:host {
+  .userDetailsWrapper {
+    .toolbarWrapper {
+      mat-toolbar {
+        background-color: #070754;
+        justify-content: end;
+        button {
+          padding: 8px 1.5rem;
+          cursor: pointer;
+          background: transparent;
+          color: white;
+          border: 1px solid white;
+          border-radius: 4px;
+        }
+      }
+    }
+    .userData {
+      display: flex;
+      gap: 4rem;
+      padding: 10rem 5rem;
+      .userImage {
+        img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+      .userInfo {
+        .line {
+          margin-bottom: 2rem;
+          .key {
+            font-size: 18px;
+            font-weight: 500;
+          }
+          .value {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #555555cf;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<div class="pageWrapper">
+  <div class="toolbarWrapper">
+    <mat-toolbar>
+      <input
+        matInput
+        (keyup)="onSearch($event)"
+        type="number"
+        placeholder="Search By ID"
+      />
+    </mat-toolbar>
+  </div>
+  <div class="grid" *ngIf="filteredUsersList.length">
+    <div class="cardsContainer">
+      <mat-card
+        class="example-card"
+        *ngFor="let user of filteredUsersList"
+        (click)="navigateToUserDetails(user.id)"
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title
+              >{{ user.first_name }} {{ user.last_name }}</mat-card-title
+            >
+            <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+            <img mat-card-sm-image [src]="user.avatar" />
+          </mat-card-title-group>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div class="paginationContainer">
+      <mat-paginator
+        [length]="usersTotal"
+        [pageSize]="itemsPerPage"
+        aria-label="Select page"
+        (page)="pageChanged($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+<app-empty-state *ngIf="!filteredUsersList.length"></app-empty-state>
